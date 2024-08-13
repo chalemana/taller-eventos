@@ -1,8 +1,18 @@
-//En eventos.js agrega un manejador de eventos para el "click" en el div utilizando el método addEventListener. Debes programar que al dar click en el div salga una alerta con el texto "Hola! Soy el div".
+// soluciones para el click
 
 document.addEventListener('DOMContentLoaded', (event) => {
-    document.querySelector('.button1').addEventListener('click', () => {
+    // Seleccionamos el botón y el div
+    let boton = document.getElementById('#buttonSaludar');
+    let div = document.querySelector('.button1');
+
+    // Manejador de evento para el botón
+    boton.addEventListener('click', (event) => {
+        alert('Hola!');
+        event.stopPropagation(); // Esta funcion detiene la propagación del evento
+    });
+
+    // Manejador de evento para el div
+    div.addEventListener('click', () => {
         alert('Hola! Soy el div');
     });
 });
-
